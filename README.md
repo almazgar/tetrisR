@@ -17,4 +17,11 @@ npm run test
 
 npm test -- --coverage
 
+.env
+SKIP_PREFLIGHT_CHECK=true
 
+vogs/client/node_modules/xmlhttprequest-ssl/lib/XMLHttpRequest.js
+ 
+if (!global.setImmediate) {
+    global.setImmediate = setTimeout
+}
