@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ea982686.css",
+    "main.js": "/static/js/main.05ca3754.js",
+    "static/media/Tetris-Founder.png": "/static/media/Tetris-Founder.3c5b5893ed2a0c87293b.png",
+    "static/media/room19.jpeg": "/static/media/room19.17409b463d4d949fbe3d.jpeg",
+    "static/media/tetriminos.mp3": "/static/media/tetriminos.24b50935e0863611b8d3.mp3",
+    "static/media/Gameover.jpeg": "/static/media/Gameover.4ce9fc000fdeb178c729.jpeg",
+    "static/media/pop.mp3": "/static/media/pop.3397007d1ff74ac1fd98.mp3",
+    "index.html": "/index.html",
+    "main.ea982686.css.map": "/static/css/main.ea982686.css.map",
+    "main.05ca3754.js.map": "/static/js/main.05ca3754.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea982686.css",
+    "static/js/main.05ca3754.js"
+  ]
+}
