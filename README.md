@@ -16,6 +16,7 @@ kill -9 $(lsof -t -i:3000)
 npm run test
 
 npm test -- --coverage
+npm run test a -- --coverage
 
 .env
 SKIP_PREFLIGHT_CHECK=true
