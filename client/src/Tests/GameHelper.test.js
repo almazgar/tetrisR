@@ -26,3 +26,52 @@ test("Test Collision False", () => {
     };
     expect(checkcollision(player, stageFull, { x: 1, y: 0 })).toBeTruthy();
 });
+test("Test Collision TRUE", () => {
+    let player = {
+        pos: { x: S_WIDTH / 2 - 1, y: 0 },
+        tetromino: [
+            [0, "J", 0],
+            [0, "J", 0],
+            ["J", "J", 0],
+        ],
+        collided: false,
+    };
+    expect(checkcollision(player, stage, { x: 1, y: 0 })).toBeFalsy();
+});
+test("Test Collision False", () => {
+    let player = {
+        pos: { x: S_WIDTH / 2 - 1, y: 0 },
+        tetromino: [
+            [0, "J", 0],
+            [0, "J", 0],
+            ["J", "J", 0],
+        ],
+        collided: false,
+    };
+    expect(checkcollision(player, stageFull, { x: 1, y: 0 })).toBeTruthy();
+});
+
+test("Test Collision TRUE", () => {
+    let player = {
+        pos: { x: S_WIDTH / 2 - 1, y: 0 },
+        tetromino: [
+            ["D", "D", 0],
+            ["D", "D", 0],
+            [0, 0, 0],
+        ],
+        collided: false,
+    };
+    expect(checkcollision(player, stage, { x: 1, y: 0 })).toBeFalsy();
+});
+test("Test Collision False", () => {
+    let player = {
+        pos: { x: S_WIDTH / 2 - 1, y: 0 },
+        tetromino: [
+            ["D", "D", 0],
+            ["D", "D", 0],
+            [0, 0, 0],
+        ],
+        collided: false,
+    };
+    expect(checkcollision(player, stageFull, { x: 1, y: 0 })).toBeTruthy();
+});

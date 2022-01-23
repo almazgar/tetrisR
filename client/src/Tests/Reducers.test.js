@@ -27,8 +27,18 @@ describe("Room test", () => {
             gameOver: false,
         });
     });
-    it("Room restart game ", () => {
-        expect(rRoom(undefined, { type: aRoom.RESTART_GAME })).toEqual({
+    // it("Room restart game ", () => {
+    //     expect(rRoom(undefined, { type: aRoom.RESTART_GAME })).toEqual({
+    //         name: "",
+    //         members: 0,
+    //         gameStarted: false,
+    //         mode: "Solo",
+    //         next_piece: [],
+    //         gameOver: false,
+    //     });
+    // });
+    it("Room reset state ", () => {
+        expect(rRoom(undefined, { type: "RESET_STATE" })).toEqual({
             name: "",
             members: 0,
             gameStarted: false,
@@ -37,6 +47,16 @@ describe("Room test", () => {
             gameOver: false,
         });
     });
+    // it("Room reset state ", () => {
+    //     expect(rRoom(undefined, { type: "RESET_STATE" })).not.toEqual({
+    //         name: "",
+    //         members: 0,
+    //         gameStarted: false,
+    //         mode: "Multiplayer",
+    //         next_piece: [],
+    //         gameOver: false,
+    //     });
+    // });
     it("Room end game", () => {
         expect(rRoom(undefined, { type: aRoom.GAME_OVER })).toEqual({
             name: "",
@@ -75,6 +95,7 @@ describe("Room test", () => {
             gameOver: false,
         });
     });
+
 
     it("Room change piece", () => {
         expect(rRoom(undefined, {
@@ -141,6 +162,22 @@ describe("Player test", () => {
         });
     });
 
+    it("UPDATE_PLAYER ", () => {
+        expect(rPlayer(undefined, {
+            type: aPlayer.UPDATE_PLAYER,
+            data: {
+                user: "UPDATE_PLAYER user",
+                is_admin: true
+            },
+        })).toEqual({
+            username: "UPDATE_PLAYER user",
+            connected: true,
+            admin: true,
+            lost: false,
+            row: 0
+        });
+    });
+
     it("ADD_PLAYER_NAME test", () => {
         expect(rPlayer(undefined, {
             type: aPlayer.ADD_PLAYER_NAME,
@@ -154,21 +191,19 @@ describe("Player test", () => {
         });
     });
 
-    it("UPDATE_PLAYER test", () => {
+    it("START_GAME test", () => {
         expect(rPlayer(undefined, {
-            type: aPlayer.UPDATE_PLAYER,
-            data: {
-                user: "UPDATE_PLAYER",
-                is_admin: true,
-            },
+            type: aRoom.START_GAME,
+
         })).toEqual({
-            username: "UPDATE_PLAYER",
-            connected: true,
+            username: "",
+            admin: false,
+            connected: false,
             lost: false,
-            admin: true,
             row: 0,
         });
     });
+
 
     it("ADMIN_PLAYER test", () => {
         expect(rPlayer(undefined, {
@@ -194,17 +229,6 @@ describe("Player test", () => {
         });
     });
 
-    it("PLAYER_LOST test", () => {
-        expect(rPlayer(undefined, {
-            type: aPlayer.PLAYER_LOST
-        })).toEqual({
-            username: "",
-            connected: false,
-            lost: true,
-            admin: false,
-            row: 0,
-        });
-    });
 
     it("SET_ROW test", () => {
         expect(rPlayer(undefined, {
@@ -237,7 +261,7 @@ describe("Players test", () => {
         });
     });
 
-    it("ADD_PLAYER test", () => {
+    it("ADD_PLAYERs test", () => {
         expect(rPlayers([], {
             type: aPlayers.ADD_PLAYER,
             data: [{
