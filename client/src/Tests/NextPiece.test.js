@@ -1,13 +1,23 @@
 import renderer from "react-test-renderer";
 import NextPiece from "../Components/NextPiece";
 import { Createstage } from "../gameHelper";
-let stage = Createstage(4, 4)
+let stage = Createstage(8, 8)
 test("NextPiece render test ", () => {
-    const tree = renderer.create( < NextPiece / > ).toJSON();
-    expect(tree).toMatchSnapshot();
+    const nextpiecerenderer = renderer.create( < NextPiece / > ).toJSON();
+    expect(nextpiecerenderer).toMatchSnapshot();
 });
-test("NextPiece render T ", () => {
-    const tree = renderer.create( < NextPiece stage = { stage }
-        nextPiece = "T" / > ).toJSON();
-    expect(tree).toMatchSnapshot();
+test("NextPiece render I ", () => {
+    const nextpiecerenderer = renderer.create( < NextPiece stage = { stage }
+        nextPiece = "I" / > ).toJSON();
+    expect(nextpiecerenderer).toMatchSnapshot();
+});
+test("NextPiece render L ", () => {
+    const nextpiecerenderer = renderer.create( < NextPiece stage = { stage }
+        nextPiece = "L" / > ).toJSON();
+    expect(nextpiecerenderer).toMatchSnapshot();
+});
+test("NextPiece render J ", () => {
+    const nextpiecerenderer = renderer.create( < NextPiece stage = { stage }
+        nextPiece = "J" / > ).toJSON();
+    expect(nextpiecerenderer).toMatchSnapshot();
 });

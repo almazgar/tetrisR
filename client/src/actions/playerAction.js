@@ -6,19 +6,19 @@ export const PLAYER_LOST = "PLAYER_LOST";
 export const SET_ROW = "SET_ROW";
 
 const addPlayerName = (data) => ({
-  type: ADD_PLAYER_NAME,
-  data: data,
+    type: ADD_PLAYER_NAME,
+    data: data,
 });
 
 const updateplayer = (data) => ({
-  type: UPDATE_PLAYER,
-  data: data,
+    type: UPDATE_PLAYER,
+    data: data,
 });
 
 const playerLost = (data) => {
-  return (dispatch) => {
-    socket.emit("Loser", data)
-  };
+    return (dispatch) => {
+        socket.emit("Loser", data)
+    };
 }
 
 export { addPlayerName, updateplayer, playerLost };

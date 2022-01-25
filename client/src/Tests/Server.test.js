@@ -7,12 +7,12 @@ describe("Server Test ", () => {
     });
     test("should Joinroom", () => {
         socket.emit("joinRoom", { user: "test", room: "ROOM", mode: "Solo" });
-        socket.on("TOASTIFY", (res) => {
+        socket.on("React-Toastify", (res) => {
             expect(res.message).toContain("Created room!");
         });
-        socket.emit("joinRoom", { user: "test2", room: "ROOM" });
-        socket.on("TOASTIFY", (res) => {
-            expect(res.message).toContain("Username Already existe");
+        socket.emit("joinRoom", { user: "testing", room: "ROOM" });
+        socket.on("React-Toastify", (res) => {
+            expect(res.message).toContain("Username Already exists");
         });
         socket.disconnect()
     });

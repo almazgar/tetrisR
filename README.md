@@ -26,3 +26,6 @@ vogs/client/node_modules/xmlhttprequest-ssl/lib/XMLHttpRequest.js
 if (!global.setImmediate) {
     global.setImmediate = setTimeout
 }
+
+
+https://devhints.io/jest

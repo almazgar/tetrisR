@@ -5,13 +5,13 @@ import { Createstage } from "../gameHelper";
 let stage = Createstage(12, 20)
 
 test("Test Stage Gameover rendering ", () => {
-            const disr = renderer.create( < Stage gameOver = { true }
+            const stagerenderer = renderer.create( < Stage gameOver = { true }
                 stage = { stage }
                 />).toJSON();
-                expect(disr).toMatchSnapshot();
+                expect(stagerenderer).toMatchSnapshot();
             });
 
         test("Test Stage rendering ", () => {
-            const disr = renderer.create( < Stage / > ).toJSON();
-            expect(disr).toMatchSnapshot();
+            const stagerenderer = renderer.create( < Stage / > ).toJSON();
+            expect(stagerenderer).toMatchSnapshot();
         });

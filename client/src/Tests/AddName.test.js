@@ -1,9 +1,9 @@
-import renderer from "react-test-renderer";
-import AddName from "../Components/AddName";
-import store from "../Store";
 import { Provider } from "react-redux";
 import * as reactRedux from "react-redux";
 import { render, fireEvent, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
+import AddName from "../Components/AddName";
+import store from "../Store";
 
 describe("AddName", () => {
   const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");

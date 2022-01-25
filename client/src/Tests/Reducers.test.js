@@ -1,9 +1,9 @@
-import rRoom from "../reducers/roomReducer";
-import * as aRoom from "../actions/roomAction";
 import rPlayer from "../reducers/playerReducer";
 import * as aPlayer from "../actions/playerAction";
 import rPlayers from "../reducers/playersReducer";
 import * as aPlayers from "../actions/playersAction";
+import rRoom from "../reducers/roomReducer";
+import * as aRoom from "../actions/roomAction";
 
 describe("Room test", () => {
     it("init state", () => {
@@ -11,9 +11,9 @@ describe("Room test", () => {
             name: "",
             members: 0,
             gameStarted: false,
+            gameOver: false,
             mode: "Solo",
             next_piece: [],
-            gameOver: false,
         });
     });
 
@@ -22,9 +22,9 @@ describe("Room test", () => {
             name: "",
             members: 0,
             gameStarted: true,
+            gameOver: false,
             mode: "Solo",
             next_piece: [],
-            gameOver: false,
         });
     });
     // it("Room restart game ", () => {
@@ -62,9 +62,9 @@ describe("Room test", () => {
             name: "",
             members: 0,
             gameStarted: false,
+            gameOver: true,
             mode: "Solo",
             next_piece: [],
-            gameOver: true,
         });
     });
 
@@ -76,9 +76,9 @@ describe("Room test", () => {
             name: "Room1",
             members: 0,
             gameStarted: false,
+            gameOver: false,
             mode: "Solo",
             next_piece: [],
-            gameOver: false,
         });
     });
 
@@ -90,9 +90,9 @@ describe("Room test", () => {
             name: "",
             members: 0,
             gameStarted: false,
+            gameOver: false,
             mode: "Multiplayer",
             next_piece: [],
-            gameOver: false,
         });
     });
 
@@ -105,9 +105,9 @@ describe("Room test", () => {
             name: "",
             members: 0,
             gameStarted: false,
+            gameOver: false,
             mode: "Solo",
             next_piece: ["I", "J"],
-            gameOver: false,
         });
     });
 
@@ -116,9 +116,9 @@ describe("Room test", () => {
             name: "",
             members: 0,
             gameStarted: false,
+            gameOver: false,
             mode: "Solo",
             next_piece: [],
-            gameOver: false,
         });
     });
 
@@ -130,9 +130,9 @@ describe("Room test", () => {
             name: "",
             members: 4,
             gameStarted: false,
+            gameOver: false,
             mode: "Solo",
             next_piece: [],
-            gameOver: false,
         });
     });
 
@@ -144,9 +144,9 @@ describe("Room test", () => {
             name: "NEW_NAME",
             members: 0,
             gameStarted: false,
+            gameOver: false,
             mode: "Solo",
             next_piece: [],
-            gameOver: false,
         });
     });
 });
@@ -211,8 +211,8 @@ describe("Player test", () => {
         })).toEqual({
             username: "",
             connected: false,
-            lost: false,
             admin: true,
+            lost: false,
             row: 0,
         });
     });
@@ -223,8 +223,8 @@ describe("Player test", () => {
         })).toEqual({
             username: "",
             connected: false,
-            lost: true,
             admin: false,
+            lost: true,
             row: 0,
         });
     });
@@ -237,8 +237,8 @@ describe("Player test", () => {
         })).toEqual({
             username: "",
             connected: false,
-            lost: false,
             admin: false,
+            lost: false,
             row: 1,
         });
     });

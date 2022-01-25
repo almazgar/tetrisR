@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { Provider } from "react-redux";
+import { actionListener } from "./listeners";
 import store from "./Store";
-import { stethoscope } from "./listeners";
 import { checkHash } from "./actions/checkHash";
+import { Provider } from "react-redux";
 
-stethoscope(store.dispatch, store.getState);
+actionListener(store.dispatch, store.getState);
 checkHash(window.location.hash.substring(1));
 
 ReactDOM.render(
