@@ -77,8 +77,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom --verbose=true --detectOpenHandles --expand",
-    "coverage": "node scripts/test.js --env=jsdom --coverage --watchAll --runInBand --detectOpenHandles --expand"
+    "test": "node scripts/test.js --env=jsdom",
+    "coverage": "node scripts/test.js --env=jsdom --coverage --watchAll --runInBand --expand"
   },
   "browserslist": {
     "production": [
@@ -96,7 +96,8 @@
     "@babel/preset-react": "^7.16.0",
     "babel-plugin-react-require": "^3.1.3",
     "jest-cli": "^27.4.4",
-    "react-test-renderer": "^17.0.2"
+    "react-test-renderer": "^17.0.2",
+    "setimmediate": "^1.0.5"
   },
   "jest": {
     "roots": [
@@ -107,7 +108,8 @@
       "!src/**/*.d.ts"
     ],
     "setupFiles": [
-      "react-app-polyfill/jsdom"
+      "react-app-polyfill/jsdom",
+      "./setupTests.js"
     ],
     "setupFilesAfterEnv": [],
     "testMatch": [
